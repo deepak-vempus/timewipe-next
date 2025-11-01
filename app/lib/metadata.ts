@@ -17,7 +17,7 @@ export function generateMetadata({
   const fullTitle = title ? `${title} | ${SITE_CONFIG.name}` : `${SITE_CONFIG.name} - Remove Timestamps from Transcripts`;
   const fullDescription = description || SITE_CONFIG.description;
   const canonicalUrl = `${SITE_CONFIG.url}${path}`;
-  const ogImage = `${SITE_CONFIG.url}/og-image.png`; // You can add this later
+  const ogImage = `${SITE_CONFIG.url}/og.png`;
 
   return {
     title: fullTitle,
