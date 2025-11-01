@@ -32,6 +32,12 @@ export default function RootLayout({
           strategy="beforeInteractive"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
         />
+        <Script
+          defer
+          src="https://umami.vempus.com/script.js"
+          data-website-id="164ec3d2-5755-45ad-9239-7ee7ddb83daf"
+          strategy="afterInteractive"
+        />
         <a
           href="#main-content"
           className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-[#e07a5f] focus:text-white focus:rounded-lg"
