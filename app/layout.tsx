@@ -1,16 +1,9 @@
 import type { Metadata } from "next";
 import Script from "next/script";
-import { Onest } from "next/font/google";
 import "./globals.css";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import { generateMetadata as generateDefaultMetadata, generateStructuredData } from "./lib/metadata";
-
-const onest = Onest({
-  variable: "--font-onest",
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"], // Only load necessary weights for better performance
-});
 
 export const metadata: Metadata = generateDefaultMetadata();
 
@@ -23,9 +16,15 @@ export default function RootLayout({
 
   return (
     <html lang="en" suppressHydrationWarning>
-      <body
-        className={`${onest.variable} antialiased flex flex-col min-h-screen`}
-      >
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700&display=swap"
+          rel="stylesheet"
+        />
+      </head>
+      <body className="antialiased flex flex-col min-h-screen">
         <Script
           id="structured-data"
           type="application/ld+json"
