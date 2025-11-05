@@ -182,7 +182,7 @@ export default function Navigation() {
 
             {/* Auth Section - Mobile */}
             <div className="px-6 py-4">
-              <UserMenu />
+              <UserMenu mobile={true} onNavigate={() => setIsMobileMenuOpen(false)} />
             </div>
           </div>
         </nav>
