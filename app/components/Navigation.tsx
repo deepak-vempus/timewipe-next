@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import { NAVIGATION } from "../lib/constants";
 import { useState } from "react";
 import { ChevronDown } from "lucide-react";
+import UserMenu from "./UserMenu";
 
 export default function Navigation() {
   const pathname = usePathname();
@@ -83,21 +84,9 @@ export default function Navigation() {
           })}
         </nav>
 
-        {/* Auth Buttons - Desktop */}
+        {/* Auth Section - Desktop */}
         <div className="flex items-center gap-3 ml-auto">
-          {/* Placeholder for auth - will be replaced with Clerk components */}
-          <Link
-            href="/login"
-            className="text-sm font-medium text-[#2d1f14] hover:text-[#e07a5f] transition-colors"
-          >
-            Log In
-          </Link>
-          <Link
-            href="/signup"
-            className="text-sm font-semibold bg-[#e07a5f] text-white px-4 py-2 rounded-lg hover:bg-[#d4694e] transition-colors"
-          >
-            Sign Up
-          </Link>
+          <UserMenu />
         </div>
       </div>
 
@@ -191,22 +180,9 @@ export default function Navigation() {
               );
             })}
 
-            {/* Auth Buttons - Mobile */}
-            <div className="px-6 py-4 space-y-2">
-              <Link
-                href="/login"
-                className="block w-full text-center text-sm font-medium text-[#2d1f14] hover:text-[#e07a5f] transition-colors py-2"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                Log In
-              </Link>
-              <Link
-                href="/signup"
-                className="block w-full text-center text-sm font-semibold bg-[#e07a5f] text-white px-4 py-2 rounded-lg hover:bg-[#d4694e] transition-colors"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                Sign Up
-              </Link>
+            {/* Auth Section - Mobile */}
+            <div className="px-6 py-4">
+              <UserMenu />
             </div>
           </div>
         </nav>
