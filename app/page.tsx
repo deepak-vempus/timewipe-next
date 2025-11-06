@@ -30,7 +30,7 @@ export default function Home() {
   return (
     <div className="min-h-screen">
       {/* Hero Section with Tool */}
-      <section className="py-12 md:py-16 bg-white border-b border-gray-200">
+      <section className="py-16 md:py-20 bg-white border-b border-gray-200">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto text-center mb-12">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#2d1f14] mb-6">
