@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import Script from "next/script";
-import { ClerkProvider } from "@clerk/nextjs";
 import "./globals.css";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import { ClerkProviderWrapper } from "./components/ClerkProviderWrapper";
 import { generateMetadata as generateDefaultMetadata, generateStructuredData } from "./lib/metadata";
 
 export const metadata: Metadata = generateDefaultMetadata();
@@ -16,7 +16,7 @@ export default function RootLayout({
   const structuredData = generateStructuredData();
 
   return (
-    <ClerkProvider>
+    <ClerkProviderWrapper>
       <html lang="en" suppressHydrationWarning>
         <head>
           <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -52,6 +52,6 @@ export default function RootLayout({
           <Footer />
         </body>
       </html>
-    </ClerkProvider>
+    </ClerkProviderWrapper>
   );
 }

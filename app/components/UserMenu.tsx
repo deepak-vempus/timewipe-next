@@ -13,6 +13,40 @@ export default function UserMenu({ mobile = false, onNavigate }: UserMenuProps) 
     if (onNavigate) onNavigate();
   };
 
+  // Check if Clerk is configured
+  const clerkKey = process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY;
+  const hasClerk = clerkKey && !clerkKey.includes('placeholder') && clerkKey.length > 20;
+
+  // If Clerk is not configured, just show sign up/login buttons
+  if (!hasClerk) {
+    return (
+      <div className={mobile ? "flex flex-col gap-2 w-full" : "flex items-center gap-3"}>
+        <Link
+          href="/login"
+          onClick={handleClick}
+          className={
+            mobile
+              ? "block w-full text-center text-sm font-medium text-[#2d1f14] hover:text-[#e07a5f] transition-colors py-2 border border-gray-300 rounded-lg hover:bg-gray-50"
+              : "text-sm font-medium text-[#2d1f14] hover:text-[#e07a5f] transition-colors"
+          }
+        >
+          Log In
+        </Link>
+        <Link
+          href="/signup"
+          onClick={handleClick}
+          className={
+            mobile
+              ? "block w-full text-center text-sm font-semibold bg-[#e07a5f] text-white px-4 py-2 rounded-lg hover:bg-[#d4694e] transition-colors"
+              : "text-sm font-semibold bg-[#e07a5f] text-white px-4 py-2 rounded-lg hover:bg-[#d4694e] transition-colors"
+          }
+        >
+          Sign Up
+        </Link>
+      </div>
+    );
+  }
+
   return (
     <>
       {/* Show when user is NOT logged in */}

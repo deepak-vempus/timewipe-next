@@ -8,6 +8,9 @@ export const metadata: Metadata = {
   description: "Generate and manage your Time Wipe API keys for programmatic access.",
 };
 
+// Force dynamic rendering for protected pages
+export const dynamic = 'force-dynamic';
+
 export default function APIKeysPage() {
   // In a real app, fetch from database
   const apiKeys = [

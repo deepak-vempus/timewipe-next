@@ -6,6 +6,9 @@ export const metadata: Metadata = {
   description: "Log in to your TimeWipe account to access premium features, API keys, and usage analytics.",
 };
 
+// Force dynamic rendering for auth pages
+export const dynamic = 'force-dynamic';
+
 export default function LoginPage() {
   return (
     <div className="min-h-screen bg-[#ede7de] flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
