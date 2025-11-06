@@ -2,17 +2,6 @@
   command = "npm run build"
   publish = ".next"
 
-[build.environment]
-  # Dummy Clerk keys for build - these won't work for actual auth
-  # Replace with real keys in Netlify dashboard for production
-  NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY = "pk_test_bG9jYWwtY29tcGxldGUtbW9vbmNha2UtNzYuY2xlcmsuYWNjb3VudHMuZGV2JA"
-  CLERK_SECRET_KEY = "sk_test_bG9jYWxfc2VjcmV0X2tleV9mb3JfYnVpbGRfb25seQ"
-  NEXT_PUBLIC_CLERK_SIGN_IN_URL = "/login"
-  NEXT_PUBLIC_CLERK_SIGN_UP_URL = "/signup"
-  NEXT_PUBLIC_CLERK_AFTER_SIGN_IN_URL = "/dashboard"
-  NEXT_PUBLIC_CLERK_AFTER_SIGN_UP_URL = "/dashboard"
-  NODE_ENV = "production"
-
 # Netlify Plugin for Next.js
 [[plugins]]
   package = "@netlify/plugin-nextjs"
