@@ -16,6 +16,9 @@ export const metadata: Metadata = {
   description: "Manage your TimeWipe account, view usage statistics, and access your API keys.",
 };
 
+// Force dynamic rendering for protected pages
+export const dynamic = 'force-dynamic';
+
 export default async function DashboardPage() {
   const { userId } = await auth();
   const user = await currentUser();

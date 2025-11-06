@@ -6,6 +6,9 @@ export const metadata: Metadata = {
   description: "Create your free TimeWipe account to access premium features, API access, and bulk processing.",
 };
 
+// Force dynamic rendering for auth pages
+export const dynamic = 'force-dynamic';
+
 export default function SignUpPage() {
   return (
     <div className="min-h-screen bg-[#ede7de] flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">

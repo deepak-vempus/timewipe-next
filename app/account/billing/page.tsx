@@ -9,6 +9,9 @@ export const metadata: Metadata = {
   description: "Manage your TimeWipe subscription, billing, and payment methods.",
 };
 
+// Force dynamic rendering for protected pages
+export const dynamic = 'force-dynamic';
+
 export default function BillingPage() {
   // In a real app, fetch from database
   const subscription = {

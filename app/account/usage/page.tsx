@@ -7,6 +7,9 @@ export const metadata: Metadata = {
   description: "View your TimeWipe usage statistics and analytics.",
 };
 
+// Force dynamic rendering for protected pages
+export const dynamic = 'force-dynamic';
+
 export default function UsagePage() {
   // In a real app, fetch from database
   const usage = {
